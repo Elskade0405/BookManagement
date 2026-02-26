@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "f:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj": {}
+    "F:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj": {}
   },
   "projects": {
-    "f:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj": {
+    "F:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "f:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj",
+        "projectUniqueName": "F:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj",
         "projectName": "BookManagement",
-        "projectPath": "f:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj",
+        "projectPath": "F:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj",
         "packagesPath": "C:\\Users\\NSH\\.nuget\\packages\\",
-        "outputPath": "f:\\workspace\\BookManagement\\BookManagement\\obj\\",
+        "outputPath": "F:\\workspace\\BookManagement\\BookManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NSH\\AppData\\Roaming\\NuGet\\NuGet.Config"
