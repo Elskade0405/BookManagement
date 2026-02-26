@@ -1,6 +1,14 @@
-@BookManagement_HostAddress = http://localhost:5123
-
-GET {{BookManagement_HostAddress}}/weatherforecast/
-Accept: application/json
+GET http://localhost:5123/books
 
 ###
+GET http://localhost:5123/books/4
+
+###
+POST http://localhost:5123/books
+Content-Type: application/json
+
+{
+    "name": "Book 4",
+    "author": "Author 4",
+    "publisher": "Publisher 4"
+}

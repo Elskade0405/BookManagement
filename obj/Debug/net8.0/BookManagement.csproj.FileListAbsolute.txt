@@ -113,3 +113,4 @@ F:\workspace\BookManagement\BookManagement\obj\Debug\net8.0\refint\BookManagemen
 F:\workspace\BookManagement\BookManagement\obj\Debug\net8.0\BookManagement.pdb
 F:\workspace\BookManagement\BookManagement\obj\Debug\net8.0\BookManagement.genruntimeconfig.cache
 F:\workspace\BookManagement\BookManagement\obj\Debug\net8.0\ref\BookManagement.dll
+F:\workspace\BookManagement\BookManagement\obj\Debug\net8.0\BookManagement.sourcelink.json
