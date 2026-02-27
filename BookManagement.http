@@ -1,27 +1,59 @@
 GET http://localhost:5123/books
 
 ###
-GET http://localhost:5123/books/4
+GET http://localhost:5123/books/10
 
 ###
 POST http://localhost:5123/books
 Content-Type: application/json
 
 {
-    "name": "Book 4",
-    "author": "Author 4",
-    "publisher": "Publisher 4"
+    "name": "Book 20 ",
+    "author": "Author 1",
+    "publisher": "Publisher 2",
+    "authorId": 1
 }
 
 ###
-PUT http://localhost:5123/books/1
+PUT http://localhost:5123/books/2
 Content-Type: application/json
 
 {
-    "name": "Book 4",
-    "author": "Author 4",
-    "publisher": "Publisher 4"
+    "name": "oke",
+    "publisher": "Publisher 1",
+    "authorId": 1
 }
 
 ###
 DELETE http://localhost:5123/books/1
+
+
+//Author
+###
+GET http://localhost:5123/authors
+
+###
+GET http://localhost:5123/authors/10
+
+###
+POST http://localhost:5123/authors
+Content-Type: application/json
+
+{
+    "name": "",
+    "dateOfBirth": "2000-01-01",
+    "gender": "Male"
+}
+
+###
+PUT http://localhost:5123/authors/1
+Content-Type: application/json
+
+{
+    "name": "Author 1 ",
+    "dateOfBirth": "2000-01-01",
+    "gender": 0
+}
+
+###
+DELETE http://localhost:5123/authors/1
