@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BookManagement.DTOs;
 
-public record AddBookDto
+public record UpdateBookDto
 {
     [Required] public required string Name { get; set; }
     [Required] public required string Author { get; set; }

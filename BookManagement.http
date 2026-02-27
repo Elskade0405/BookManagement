@@ -12,3 +12,16 @@ Content-Type: application/json
     "author": "Author 4",
     "publisher": "Publisher 4"
 }
+
+###
+PUT http://localhost:5123/books/1
+Content-Type: application/json
+
+{
+    "name": "Book 4",
+    "author": "Author 4",
+    "publisher": "Publisher 4"
+}
+
+###
+DELETE http://localhost:5123/books/1
