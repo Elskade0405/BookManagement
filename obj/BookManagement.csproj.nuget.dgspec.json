@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "f:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj": {}
+    "c:\\Users\\admin\\Documents\\GitHub\\BookManagement\\BookManagement.csproj": {}
   },
   "projects": {
-    "f:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj": {
+    "c:\\Users\\admin\\Documents\\GitHub\\BookManagement\\BookManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "f:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj",
+        "projectUniqueName": "c:\\Users\\admin\\Documents\\GitHub\\BookManagement\\BookManagement.csproj",
         "projectName": "BookManagement",
-        "projectPath": "f:\\workspace\\BookManagement\\BookManagement\\BookManagement.csproj",
-        "packagesPath": "C:\\Users\\NSH\\.nuget\\packages\\",
-        "outputPath": "f:\\workspace\\BookManagement\\BookManagement\\obj\\",
+        "projectPath": "c:\\Users\\admin\\Documents\\GitHub\\BookManagement\\BookManagement.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\admin\\Documents\\GitHub\\BookManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\NSH\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
