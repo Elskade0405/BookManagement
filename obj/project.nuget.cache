@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dPwEN/T2Tlg=",
+  "dgSpecHash": "VFehW3VPlAI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\Documents\\GitHub\\BookManagement\\BookManagement.csproj",
+  "projectFilePath": "c:\\Users\\admin\\Documents\\GitHub\\BookManagement\\BookManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.24\\microsoft.aspnetcore.openapi.8.0.24.nupkg.sha512",
