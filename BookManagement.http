@@ -9,7 +9,6 @@ Content-Type: application/json
 
 {
     "name": "Book 20 ",
-    "author": "Author 1",
     "publisher": "Publisher 2",
     "authorId": 1
 }
@@ -21,7 +20,7 @@ Content-Type: application/json
 {
     "name": "oke",
     "publisher": "Publisher 1",
-    "authorId": 1
+    "authorId": 0
 }
 
 ###
@@ -40,7 +39,7 @@ POST http://localhost:5123/authors
 Content-Type: application/json
 
 {
-    "name": "",
+    "name": "NSHOO",
     "dateOfBirth": "2000-01-01",
     "gender": "Male"
 }
