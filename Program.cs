@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using BookManagement.Data;
 using BookManagement.DTOs;
+using BookManagement.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +16,8 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 });
 
 builder.AddDbContext();
-
+builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
 
 var app = builder.Build();
 

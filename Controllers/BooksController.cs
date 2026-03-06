@@ -1,6 +1,7 @@
 using BookManagement.Data;
 using BookManagement.DTOs;
 using BookManagement.Models;
+using BookManagement.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -9,20 +10,21 @@ namespace BookManagement.Controllers;
 
 [ApiController]
 [Route("books")]
-public class BooksController(BookContext context, ILogger<BooksController> logger) : ControllerBase
+public class BooksController(IBookService bookService, ILogger<BooksController> logger) : ControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> GetBooks()
     {
         logger.LogInformation("Đang lấy danh sách sách");
-        return Ok(await context.Books.ToListAsync());
+        var books = await bookService.GetBooksAsync();
+        return Ok(books);
     }
 
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBook(int id)
     {
-        var book = await context.Books.FindAsync(id);
+        var book = await bookService.GetBookAsync(id);
         if (book == null)
         {
             logger.LogInformation("Không tìm thấy sách");
@@ -34,59 +36,45 @@ public class BooksController(BookContext context, ILogger<BooksController> logge
     [HttpPost]
     public async Task<IActionResult> CreateBook([FromBody] AddBookDto bookDto)
     {
-        var authorExists = await context.Authors.AnyAsync(a => a.Id == bookDto.AuthorId);
-        if (!authorExists)
+        var result = await bookService.CreateBookAsync(bookDto);
+        if (!result.IsSuccess)
         {
             logger.LogInformation("Không tìm thấy tác giả");
-            return NotFound(new { error = "Author not found" });
+            return NotFound(new { error = result.ErrorMessage });
         }
-        var author = await context.Authors.FindAsync(bookDto.AuthorId);
-        var book = new Book
-        {
-            Name = bookDto.Name,
-            Author = author!.Name,
-            Publisher = bookDto.Publisher
-        };
-        context.Books.Add(book);
-        await context.SaveChangesAsync();
-        return Created($"/books/{book.Id}", book);
+
+        return Created($"/books/{result.Book!.Id}", result.Book);
     }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateBook(int id, [FromBody] UpdateBookDto updatedBook)
     {
-        var book = await context.Books.FindAsync(id);
-        if (book == null)
+        var result = await bookService.UpdateBookAsync(id, updatedBook);
+        if (result.IsNotFound)
         {
             logger.LogInformation("Không tìm thấy sách");
             return NotFound();
         }
-        var authorExists = await context.Authors.AnyAsync(a => a.Id == updatedBook.AuthorId);
-        if (!authorExists)
+
+        if (!result.IsSuccess)
         {
             logger.LogInformation("Không tìm thấy tác giả");
-            return BadRequest(new { error = "Author not found" });
+            return BadRequest(new { error = result.ErrorMessage });
         }
-        var author = await context.Authors.FindAsync(updatedBook.AuthorId);
-        book.Name = updatedBook.Name;
-        book.Author = author!.Name;
-        book.Publisher = updatedBook.Publisher;
-        await context.SaveChangesAsync();
+
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {
-        var book = await context.Books.FindAsync(id);
-        if (book == null)
+        var success = await bookService.DeleteBookAsync(id);
+        if (!success)
         {
             logger.LogInformation("Không tìm thấy sách");
             return NotFound();
         }
         logger.LogInformation("Đã xóa sách");
-        context.Books.Remove(book);
-        await context.SaveChangesAsync();
         return NoContent();
     }
 }
